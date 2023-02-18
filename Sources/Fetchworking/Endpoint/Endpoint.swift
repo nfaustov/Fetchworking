@@ -1,11 +1,17 @@
 import Foundation
 
 public struct Endpoint {
-    static var host: String = ""
+    public static var host: String = ""
 
     var path: String
     var body: Data? = nil
     var queryItems: [URLQueryItem] = []
+
+    public init(path: String, body: Data? = nil, queryItems: [URLQueryItem] = []) {
+        self.path = path
+        self.body = body
+        self.queryItems = queryItems
+    }
 }
 
 public extension Endpoint {
