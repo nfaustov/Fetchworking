@@ -4,6 +4,8 @@ import Combine
 open class NetworkController: Fetchworking {
     public var decoder: JSONDecoder = .shared
 
+    public init() {}
+
     public func request<T: Codable>(method: HttpMethod, endpoint: Endpoint) -> AnyPublisher<T, Error> {
         let urlRequest = makeRequest(method: method, endpoint: endpoint)
 
