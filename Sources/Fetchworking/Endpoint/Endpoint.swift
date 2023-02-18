@@ -31,4 +31,12 @@ public extension Endpoint {
     var headers: [String: String] {
         ["Content-Type": "application/json"]
     }
+
+    func makeJSON<T: Encodable>(_ model: T) -> Data {
+        guard let json = try? JSONEncoder().encode(model) else {
+            preconditionFailure("Encoding error.")
+        }
+
+        return json
+    }
 }
