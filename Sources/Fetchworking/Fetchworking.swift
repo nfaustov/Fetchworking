@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 public protocol Fetchworking: AnyObject {
-    func request<T: Codable>(method: HttpMethod, endpoint: Endpoint) -> AnyPublisher<T, Error>
+    func request<T: Decodable>(method: HttpMethod, endpoint: Endpoint) -> AnyPublisher<T, Error>
 }
 
 public enum HttpMethod: String {

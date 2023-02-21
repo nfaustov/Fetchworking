@@ -6,6 +6,11 @@ public protocol NetworkService {
     var host: any HostType { get }
 }
 
+public protocol AsyncNetworkService {
+    var networkController: any AsyncFetchworking { get }
+    var host: any HostType { get }
+}
+
 public protocol ServiceContainer: AnyObject {
     var host: any HostType { get }
 }
