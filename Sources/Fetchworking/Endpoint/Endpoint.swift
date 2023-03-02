@@ -1,7 +1,7 @@
 import Foundation
 
 public struct Endpoint {
-    public static var host: String = ""
+    public static var host: String = "http://127.0.0.1:8080"
 
     var path: String
     var body: Data? = nil
