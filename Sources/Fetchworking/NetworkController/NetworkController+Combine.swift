@@ -7,7 +7,7 @@ extension NetworkController: Fetchworking {
 
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap({ [handleResponse] data, response in
-                try handleResponse(response, urlRequest.url)
+                try handleResponse(response)
 
                 return data
             })

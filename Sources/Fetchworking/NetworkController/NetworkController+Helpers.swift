@@ -12,12 +12,12 @@ extension NetworkController {
         return urlRequest
     }
 
-    func handleResponse(_ response: URLResponse, url: URL?) throws {
+    func handleResponse(_ response: URLResponse) throws {
         guard let response = response as? HTTPURLResponse else {
             throw httpError(0)
         }
 
-        Log.info("Status code: \(response.statusCode) '\(url?.absoluteString ?? "")'")
+        Log.info("Status code: \(response.statusCode) '\(response.url?.absoluteString ?? "")'")
 
         if !(200...299).contains(response.statusCode) {
             throw httpError(response.statusCode)
