@@ -14,14 +14,12 @@ public struct Endpoint {
 
 public extension Endpoint {
     var url: URL {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "http"
-        urlComponents.host = "127.0.0.1:8080"
-        urlComponents.path = path
-        urlComponents.queryItems = queryItems
+        var urlComponents = URLComponents(string: "http://127.0.0.1:8080")
+        urlComponents?.path = path
+        urlComponents?.queryItems = queryItems
         
-        guard let url = urlComponents.url else {
-            preconditionFailure("Invalid URL components: \(urlComponents)")
+        guard let url = urlComponents?.url else {
+            preconditionFailure("Invalid URL components")
         }
 
         return url
