@@ -1,8 +1,6 @@
 import Foundation
 
 public struct Endpoint {
-    public static var host: String = "http://127.0.0.1:8080"
-
     var path: String
     var body: Data? = nil
     var queryItems: [URLQueryItem] = []
@@ -17,7 +15,8 @@ public struct Endpoint {
 public extension Endpoint {
     var url: URL {
         var urlComponents = URLComponents()
-        urlComponents.host = Endpoint.host
+        urlComponents.scheme = "http"
+        urlComponents.host = "127.0.0.1:8080"
         urlComponents.path = path
         urlComponents.queryItems = queryItems
         
