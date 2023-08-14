@@ -3,7 +3,7 @@ import Foundation
 extension JSONDecoder {
     static let shared: JSONDecoder = {
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .secondsSince1970
+//        decoder.dateDecodingStrategy = .secondsSince1970
         return decoder
     }()
 }
