@@ -30,8 +30,6 @@ public extension Endpoint {
     }
 
     static func makeJSON<T: Encodable>(_ model: T) -> Data {
-        let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .iso8601
         guard let json = try? JSONEncoder().encode(model) else {
             preconditionFailure("Encoding error.")
         }
