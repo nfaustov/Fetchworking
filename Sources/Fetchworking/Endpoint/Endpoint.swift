@@ -30,7 +30,7 @@ public extension Endpoint {
     }
 
     static func makeJSON<T: Encodable>(_ model: T) -> Data {
-        guard let json = try? JSONEncoder().encode(model) else {
+        guard let json = try? JSONEncoder.shared.encode(model) else {
             preconditionFailure("Encoding error.")
         }
 
